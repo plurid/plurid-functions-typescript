@@ -1,0 +1,57 @@
+{
+    "name": "@plurid/plurid-functions",
+    "version": "0.1.0",
+    "description": "Plurid Functions",
+    "keywords": [
+        "plurid",
+        "functions",
+        "components"
+    ],
+    "author": "Jan Cavel <caveljan@plurid.com> (https://plurid.com)",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/plurid/plurid-functions-typescript"
+    },
+    "bugs": {
+        "email": "feedback@plurid.com",
+        "url": "https://github.com/plurid/plurid-functions-typescript/issues"
+    },
+    "homepage": "https://github.com/plurid/plurid-functions-typescript",
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "build/"
+    ],
+    "main": "build/index.js",
+    "module": "build/index.es.js",
+    "jsnext:main": "build/index.es.js",
+    "engines": {
+        "node": ">=8",
+        "npm": ">=5"
+    },
+    "scripts": {
+        "spec": "jest",
+        "lint": "eslint ./source/index.ts",
+        "clean": "rm -rf ./build",
+        "start": "yarn clean && rollup -c -w",
+        "build.dev": "yarn clean && rollup -c",
+        "build.prod": "rollup -c --environment BUILD:production",
+        "build": "yarn clean && yarn lint && yarn spec && yarn build.prod",
+        "prepublishOnly": "yarn build"
+    },
+    "devDependencies": {
+        "@types/crypto-js": "^3.1.43",
+        "@types/jest": "^24.0.18",
+        "@types/node": "^12.7.12",
+        "@typescript-eslint/eslint-plugin": "^2.3.3",
+        "@typescript-eslint/parser": "^2.3.3",
+        "eslint": "^6.5.1",
+        "jest": "^24.9.0",
+        "rollup": "^1.23.1",
+        "rollup-plugin-typescript2": "^0.24.3",
+        "ts-jest": "^24.1.0",
+        "typescript": "^3.6.4"
+    }
+}
