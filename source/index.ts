@@ -1,39 +1,45 @@
 import {
-    placeCaretAtEnd,
-} from './functions/dom';
-
-import {
     copyToClipboard,
 } from './functions/clipboard';
 
 import {
-    debounce,
-} from './functions/metaFunctions';
+    placeCaretAtEnd,
+} from './functions/dom';
 
 import {
-    uuidv4,
-} from './functions/uuid';
+    deleteTypenames
+} from './functions/graphql';
 
 import {
     loadImage,
 } from './functions/image';
 
 import {
+    debounce,
+} from './functions/metaFunctions';
+
+import {
     randomBetween,
 } from './functions/number';
+
+import {
+    uuidv4,
+} from './functions/uuid';
 
 
 
 export {
-    placeCaretAtEnd,
-
     copyToClipboard,
 
-    debounce,
+    placeCaretAtEnd,
 
-    uuidv4,
+    deleteTypenames,
 
     loadImage,
 
+    debounce,
+
     randomBetween,
+
+    uuidv4,
 }
