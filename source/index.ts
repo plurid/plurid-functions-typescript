@@ -1,3 +1,5 @@
+import * as mathematics from './functions/mathematics';
+
 import {
     copyToClipboard,
 } from './functions/clipboard';
@@ -19,16 +21,14 @@ import {
 } from './functions/metaFunctions';
 
 import {
-    randomBetween,
-} from './functions/number';
-
-import {
     uuidv4,
 } from './functions/uuid';
 
 
 
 export {
+    mathematics,
+
     copyToClipboard,
 
     placeCaretAtEnd,
@@ -38,8 +38,6 @@ export {
     loadImage,
 
     debounce,
-
-    randomBetween,
 
     uuidv4,
 }
