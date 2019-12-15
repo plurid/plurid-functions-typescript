@@ -1,4 +1,5 @@
 import * as mathematics from './functions/mathematics';
+import * as arrays from './functions/arrays';
 
 import {
     copyToClipboard,
@@ -28,6 +29,7 @@ import {
 
 export {
     mathematics,
+    arrays,
 
     copyToClipboard,
 
