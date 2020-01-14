@@ -1,4 +1,6 @@
-export const placeCaretAtEnd = (el: any) => {
+export const placeCaretAtEnd = (
+    el: any,
+) => {
     el.focus();
     if (typeof window.getSelection != "undefined"
             && typeof document.createRange != "undefined") {
