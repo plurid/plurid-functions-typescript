@@ -1,47 +1,17 @@
 import * as mathematics from './functions/mathematics';
 import * as arrays from './functions/arrays';
 
-import {
-    copyToClipboard,
-} from './functions/clipboard';
 
-import {
-    placeCaretAtEnd,
-    getPath,
-} from './functions/dom';
 
-import {
-    deleteTypenames
-} from './functions/graphql';
-
-import {
-    loadImage,
-} from './functions/image';
-
-import {
-    debounce,
-} from './functions/metaFunctions';
-
-import {
-    uuidv4,
-} from './functions/uuid';
-
+export * from './functions/clipboard';
+export * from './functions/dom';
+export * from './functions/graphql';
+export * from './functions/image';
+export * from './functions/metaFunctions';
+export * from './functions/uuid';
 
 
 export {
     mathematics,
     arrays,
-
-    copyToClipboard,
-
-    placeCaretAtEnd,
-    getPath,
-
-    deleteTypenames,
-
-    loadImage,
-
-    debounce,
-
-    uuidv4,
 }

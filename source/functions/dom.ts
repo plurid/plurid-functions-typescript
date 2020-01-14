@@ -29,3 +29,29 @@ export const getPath = (
 ) => {
     return event.path || (event.composedPath && event.composedPath());
 }
+
+
+
+export const verifyPathforInputElement = (
+    path: any[],
+) => {
+    if (!path) {
+        return false;
+    }
+
+    let input = false;
+
+    path.some(element => {
+        if (
+            element.tagName === 'INPUT'
+            || element.tagName === 'TEXTAREA'
+            || element.contentEditable === 'true'
+        ) {
+            input = true;
+            return true;
+        }
+        return false;
+    })
+
+    return input;
+}
