@@ -1,17 +1,22 @@
-import * as mathematics from './functions/mathematics';
 import * as arrays from './functions/arrays';
+import * as clipboard from './functions/clipboard';
+import * as dom from './functions/dom';
+import * as graphql from './functions/graphql';
+import * as image from './functions/image';
+import * as mathematics from './functions/mathematics';
+import * as meta from './functions/meta';
 
 
 
-export * from './functions/clipboard';
-export * from './functions/dom';
-export * from './functions/graphql';
-export * from './functions/image';
-export * from './functions/metaFunctions';
 export * from './functions/uuid';
 
 
 export {
-    mathematics,
     arrays,
+    clipboard,
+    dom,
+    graphql,
+    image,
+    mathematics,
+    meta,
 }
