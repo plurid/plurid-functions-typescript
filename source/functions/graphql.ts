@@ -1,4 +1,6 @@
-export const deleteTypenames = (data: any) => {
+export const deleteTypenames = (
+    data: any,
+) => {
     let dataObject = null;
     if (Array.isArray(data)) {
         dataObject = [ ...data ];

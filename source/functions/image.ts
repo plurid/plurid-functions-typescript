@@ -1,4 +1,7 @@
-export const loadImage = (url: string, anonymous: boolean = true) => {
+export const loadImage = (
+    url: string,
+    anonymous: boolean = true,
+) => {
     return new Promise(
         (response) => {
             const image = new Image();
