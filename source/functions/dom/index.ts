@@ -24,7 +24,7 @@ export const placeCaretAtEnd = (el: any) => {
  *
  * @param event
  */
-export const getPath = (
+export const getEventPath = (
     event: any,
 ) => {
     return event.path || (event.composedPath && event.composedPath());

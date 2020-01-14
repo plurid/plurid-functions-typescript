@@ -1,4 +1,10 @@
-export const loadImage = (
+/**
+ * Load image from URL in browser.
+ *
+ * @param url
+ * @param anonymous
+ */
+export const load = (
     url: string,
     anonymous: boolean = true,
 ) => {
