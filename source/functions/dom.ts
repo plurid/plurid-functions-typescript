@@ -15,3 +15,17 @@ export const placeCaretAtEnd = (el: any) => {
         textRange.select();
     }
 }
+
+
+/**
+ * Gets the event path cross-browser.
+ *
+ * Based on https://stackoverflow.com/a/39245638
+ *
+ * @param event
+ */
+export const getPath = (
+    event: any,
+) => {
+    return event.path || (event.composedPath && event.composedPath());
+}
