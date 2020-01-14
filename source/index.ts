@@ -7,6 +7,7 @@ import {
 
 import {
     placeCaretAtEnd,
+    getPath,
 } from './functions/dom';
 
 import {
@@ -34,6 +35,7 @@ export {
     copyToClipboard,
 
     placeCaretAtEnd,
+    getPath,
 
     deleteTypenames,
 
