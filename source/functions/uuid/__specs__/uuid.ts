@@ -1,4 +1,4 @@
-import { uuidv4 } from '../uuid';
+import { uuidv4 } from '../';
 
 
 
