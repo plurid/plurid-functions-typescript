@@ -1,6 +1,6 @@
 {
     "name": "@plurid/plurid-functions-react",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Plurid Functions for React",
     "keywords": [
         "plurid",
@@ -40,6 +40,9 @@
         "build.production": "rollup -c --environment BUILD:production",
         "build": "yarn clean && yarn lint && yarn spec && yarn build.production",
         "prepublishOnly": "yarn build"
+    },
+    "peerDependencies": {
+        "react": ">=16.13"
     },
     "devDependencies": {
         "@types/crypto-js": "^3.1.43",
