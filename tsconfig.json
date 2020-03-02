@@ -23,6 +23,7 @@
         "source/**/*"
     ],
     "exclude": [
-        "source/**/*.spec.ts"
+        "node_modules",
+        "**/*.spec.ts"
     ]
 }
