@@ -22,7 +22,7 @@ Utility functions to be used in TypesScript projects.
 
 [@plurid/plurid-functions][plurid-functions] • general functions and utilities
 
-[plurid-functions]: https://github.com/plurid/plurid-functions-typescript/tree/master/packages/general
+[plurid-functions]: https://github.com/plurid/plurid-functions-typescript/tree/master/packages/plurid-functions-general
 
 
 <a target="_blank" href="https://www.npmjs.com/package/@plurid/plurid-functions-react">
@@ -31,4 +31,4 @@ Utility functions to be used in TypesScript projects.
 
 [@plurid/plurid-functions-react][plurid-functions-react] • functions, hooks, and utilities for React
 
-[plurid-functions-react]: https://github.com/plurid/plurid-functions-typescript/tree/master/packages/react
+[plurid-functions-react]: https://github.com/plurid/plurid-functions-typescript/tree/master/packages/plurid-functions-react
