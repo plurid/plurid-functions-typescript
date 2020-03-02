@@ -1,18 +1,9 @@
+import * as uuid from '../uuid';
+
 import {
-    uuidv4 as uuid,
-} from '../uuid';
+    Indexed,
+} from '../../interfaces';
 
-
-
-export interface WithID {
-    id: string;
-}
-
-export type IdentifiedByID<T> = T & WithID;
-
-export interface Indexed<T> {
-    [key: string]: T;
-}
 
 
 /**
@@ -37,7 +28,7 @@ export const identify = <T>(
 
 
     const identifiedItems = items.map(item => {
-        const idValue: string = item[idProperty] || uuid();
+        const idValue: string = item[idProperty] || uuid.generate();
 
         const identifiedItem = {
             ...item,
