@@ -23,6 +23,7 @@ Contains functions for:
 + dom
 + graphql
 + image
++ indexing
 + mathematics
 + meta(functions)
 + uuid
