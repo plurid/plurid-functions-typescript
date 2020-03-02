@@ -10,3 +10,19 @@
         <img src="https://img.shields.io/badge/license-MIT-blue.svg?colorB=1380C3&style=for-the-badge" alt="License: MIT">
     </a>
 </p>
+
+
+
+General utility functions to be used in TypesScript projects.
+
+
+Contains functions for:
+
++ arrays
++ clipboard
++ dom
++ graphql
++ image
++ mathematics
++ meta(functions)
++ uuid
