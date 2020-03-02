@@ -2,7 +2,7 @@
 node_modules
 
 # builds
-build
+distribution
 .rpt2_cache
 coverage
 
