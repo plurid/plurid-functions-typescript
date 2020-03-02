@@ -34,7 +34,7 @@ export const getEventPath = (
 
 
 
-export const verifyPathforInputElement = (
+export const verifyPathInputElement = (
     path: any[],
 ) => {
     if (!path) {
