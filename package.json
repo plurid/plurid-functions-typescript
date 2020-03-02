@@ -36,9 +36,9 @@
         "lint": "eslint ./source/index.ts",
         "clean": "rm -rf ./build",
         "start": "yarn clean && rollup -c -w",
-        "build.dev": "yarn clean && rollup -c",
-        "build.prod": "rollup -c --environment BUILD:production",
-        "build": "yarn clean && yarn lint && yarn spec && yarn build.prod",
+        "build.development": "yarn clean && rollup -c",
+        "build.production": "rollup -c --environment BUILD:production",
+        "build": "yarn clean && yarn lint && yarn spec && yarn build.production",
         "prepublishOnly": "yarn build"
     },
     "devDependencies": {
