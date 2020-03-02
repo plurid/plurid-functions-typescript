@@ -26,4 +26,6 @@ Contains functions for:
 + indexing
 + mathematics
 + meta(functions)
++ objects
++ runtime
 + uuid
