@@ -43,36 +43,43 @@ export const identify = <T>(
 
 
 
-/**
- * Create an index of `items`.
- *
- * @param items
- * @param idEntity
- */
-export const create = <T>(
-    items: T[],
-    /**
-     * Identify items by a certain property. Default `id`.
-     */
-    idEntity?: string,
-) => {
-    const id = idEntity || 'id';
+export type MapType = 'map';
+export type ObjectType = 'object';
+export type CreateType = MapType | ObjectType;
 
-    type Identified = {
-        [prop in typeof id]: string;
+export function create<T, O extends ObjectType>(items: T[], type?: O, idKey?: string): Indexed<T>;
+export function create<T, M extends MapType>(items: T[], type?: M, idKey?: string): Map<string, T>;
+export function create<T, C extends CreateType>(items: T[], type?: C, idKey?: string)  {
+    const id = idKey || 'id';
+    const typeProperty = type || 'object';
+
+    switch (typeProperty) {
+        case 'map':
+            {
+                const mappedItems = new Map<string, T>();
+
+                items.map(item => {
+                    const idValue: string = item[id] || uuid.generate();
+                    mappedItems.set(idValue, item);
+                });
+
+                return mappedItems;
+            }
+        case 'object':
+            {
+                const indexedItems: Indexed<T> = {};
+
+                for (const item of items) {
+                    const itemID: string | undefined = item[id];
+                    if (!itemID) {
+                        continue;
+                    }
+                    indexedItems[itemID] = item;
+                }
+
+                return indexedItems;
+            }
     }
-    type IdentifiedT = T & Identified;
 
-    const indexedItems: Indexed<IdentifiedT> = {};
-
-    for (const item of items) {
-        const itemID: string | undefined = item[id];
-        if (!itemID) {
-            continue;
-        }
-
-        indexedItems[itemID] = item as IdentifiedT;
-    }
-
-    return indexedItems;
+    return;
 }
