@@ -23,3 +23,42 @@ export const debounce = (
         if (callNow) func.apply(context, args);
     };
 };
+
+
+/**
+ * Source: https://stackoverflow.com/a/57335271
+ *
+ * @param callback Function to be called.
+ * @param wait Debounce time.
+ */
+export function debouncedCallback<A extends any[]>(
+    callback: (...args: A) => void,
+    wait: number,
+) {
+    // track args & timeout handle between calls
+    let argsRef: any;
+    let timeout: any;
+
+    function cleanup() {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+    }
+
+    return function debouncedCallback(
+        ...args: A
+    ) {
+        // capture latest args
+        argsRef.current = args;
+
+        // clear debounce timer
+        cleanup();
+
+        // start waiting again
+        timeout.current = setTimeout(() => {
+            if(argsRef.current) {
+                callback(...argsRef.current);
+            }
+        }, wait);
+    };
+}
