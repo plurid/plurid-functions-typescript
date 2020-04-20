@@ -4,6 +4,7 @@ import * as dom from './dom';
 import * as graphql from './graphql';
 import * as image from './image';
 import * as indexing from './indexing';
+import * as storage from './storage';
 import * as mathematics from './mathematics';
 import * as meta from './meta';
 import * as objects from './objects';
@@ -19,6 +20,7 @@ export {
     graphql,
     image,
     indexing,
+    storage,
     mathematics,
     meta,
     objects,
