@@ -34,3 +34,51 @@ export const equal = <T>(
 
     return true;
 }
+
+
+/**
+ * Move the `from` indexed item to the `to` indexed item of an array.
+ *
+ * @param items
+ * @param from
+ * @param to
+ */
+export const move = <T>(
+    items: T[],
+    from: number,
+    to: number,
+) => {
+    const newItems = [
+        ...items,
+    ];
+
+    newItems.splice(
+        to,
+        0,
+        newItems.splice(from, 1)[0]
+    );
+
+    return newItems;
+}
+
+
+/**
+ * Swap item `a` with `b`.
+ *
+ * @param items
+ * @param a
+ * @param b
+ */
+export const swap = <T>(
+    items: T[],
+    a: number,
+    b: number,
+) => {
+    const newItems = [
+        ...items,
+    ];
+
+    [newItems[a], newItems[b]] = [newItems[b], newItems[a]];
+
+    return newItems;
+}
