@@ -121,21 +121,15 @@ const deepClone = (
  * @param type
  */
 export const clone = <D>(
-    data: D | undefined,
+    data: D,
     type?: 'json' | 'any',
-) => {
-    if (!data) {
-        return;
-    }
-
+): D => {
     if (!type || type === 'json') {
-        try {
-            const cloned = JSON.parse(JSON.stringify(data));
+        const cloned = JSON.parse(
+            JSON.stringify(data),
+        );
 
-            return cloned;
-        } catch (error) {
-            return;
-        }
+        return cloned;
     }
 
     const deepCloned = deepClone(data);
