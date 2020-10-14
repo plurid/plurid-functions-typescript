@@ -1,23 +1,23 @@
 {
     "name": "@plurid/plurid-functions-react",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Plurid Functions for React",
     "keywords": [
         "plurid",
         "functions",
         "react"
     ],
-    "author": "Jan Cavel <caveljan@plurid.com> (https://plurid.com)",
+    "author": "ly3xqhl8g9 <ly3xqhl8g9@plurid.com> (https://plurid.com)",
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/plurid/plurid-functions-react"
+        "url": "https://github.com/plurid/plurid-functions-typescript"
     },
     "bugs": {
-        "email": "feedback@plurid.com",
-        "url": "https://github.com/plurid/plurid-functions-react/issues"
+        "email": "source@plurid.com",
+        "url": "https://github.com/plurid/plurid-functions-typescript/issues"
     },
-    "homepage": "https://github.com/plurid/plurid-functions-react",
+    "homepage": "https://github.com/plurid/plurid-functions-typescript",
     "publishConfig": {
         "access": "public"
     },
