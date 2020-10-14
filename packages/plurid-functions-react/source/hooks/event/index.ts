@@ -1,9 +1,12 @@
+// #region imports
 import {
     useEffect,
 } from 'react';
+// #endregion imports
 
 
 
+// #region module
 export const useWindowEvent = (
     event: any,
     callback: any,
@@ -69,3 +72,4 @@ export const useGlobalWheel = (
         callback,
     );
 }
+// #endregion module

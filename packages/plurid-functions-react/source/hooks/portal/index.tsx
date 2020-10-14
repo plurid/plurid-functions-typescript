@@ -5,13 +5,16 @@
  */
 
 
+// #region imports
 import {
     useRef,
     useEffect,
 } from 'react';
+// #endregion imports
 
 
 
+// #region module
 const createRootElement = (
     id: string,
 ): Element => {
@@ -102,6 +105,10 @@ const usePortal = (
 
     return getRootElem();
 }
+// #endregion module
 
 
+
+// #region exports
 export default usePortal;
+// #endregion exports

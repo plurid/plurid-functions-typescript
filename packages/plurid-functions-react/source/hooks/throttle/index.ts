@@ -1,10 +1,13 @@
+// #region imports
 import {
     useEffect,
     useRef,
 } from 'react';
+// #endregion imports
 
 
 
+// #region module
 /**
  * @param callback
  * @param delay
@@ -44,6 +47,10 @@ const useThrottledCallback = <A extends any[]>(
         );
     };
 }
+// #endregion module
 
 
+
+// #region exports
 export default useThrottledCallback;
+// #endregion exports

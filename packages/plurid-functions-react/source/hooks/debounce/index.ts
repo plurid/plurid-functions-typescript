@@ -1,10 +1,13 @@
+// #region imports
 import {
     useRef,
     useEffect,
 } from 'react';
+// #endregion imports
 
 
 
+// #region module
 /**
  * Source: https://stackoverflow.com/a/57335271
  *
@@ -46,6 +49,10 @@ function useDebouncedCallback<A extends any[]>(
         }, wait);
     };
 }
+// #endregion module
 
 
+
+// #region exports
 export default useDebouncedCallback;
+// #endregion exports
