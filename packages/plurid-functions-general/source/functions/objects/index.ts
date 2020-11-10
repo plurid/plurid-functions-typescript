@@ -136,3 +136,21 @@ export const clone = <D>(
 
     return deepCloned;
 }
+
+
+/**
+ * Convert map to object.
+ *
+ * @param map
+ */
+export const mapToObject = <K, V>(
+    map: Map<K, V>,
+) => {
+    let obj: any = {};
+
+    for (let [key, value] of map) {
+        obj[key] = value;
+    }
+
+    return obj;
+}
