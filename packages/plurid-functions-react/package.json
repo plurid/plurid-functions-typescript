@@ -8,7 +8,7 @@
         "react"
     ],
     "author": "ly3xqhl8g9 <ly3xqhl8g9@plurid.com> (https://plurid.com)",
-    "license": "MIT",
+    "license": "SEE LICENSE IN LICENSE",
     "repository": {
         "type": "git",
         "url": "https://github.com/plurid/plurid-functions-typescript"
@@ -28,35 +28,33 @@
     "module": "distribution/index.es.js",
     "jsnext:main": "distribution/index.es.js",
     "engines": {
-        "node": ">=8",
-        "npm": ">=5"
+        "node": ">=12",
+        "npm": ">=6"
     },
     "scripts": {
-        "spec": "jest",
-        "lint": "eslint ./source/index.ts",
-        "clean": "rm -rf ./distribution",
-        "start": "yarn clean && rollup -c -w",
-        "build.development": "yarn clean && rollup -c",
-        "build.production": "rollup -c --environment BUILD:production",
-        "build": "yarn clean && yarn lint && yarn spec && yarn build.production",
-        "prepublishOnly": "yarn build"
+        "test": "jest -c ./configurations/jest.config.js ./source",
+        "test.suite": "jest -c ./configurations/jest.config.js",
+        "watch": "rollup -c ./scripts/rollup.config.js -w",
+        "build": "rollup -c ./scripts/rollup.config.js",
+        "cleanup": "find ./distribution -type d -name '*__tests__' -exec rm -rf {} + && find ./distribution -type f -name '*.DS_Store' -exec rm -rf {} +",
+        "prepublishOnly": "yarn build && yarn cleanup"
     },
     "peerDependencies": {
         "react": ">=16.13"
     },
     "devDependencies": {
         "@types/crypto-js": "^4.0.1",
-        "@types/jest": "^26.0.14",
-        "@types/node": "^14.11.8",
-        "@types/react": "^16.9.52",
-        "@typescript-eslint/eslint-plugin": "^4.4.1",
-        "@typescript-eslint/parser": "^4.4.1",
-        "eslint": "^7.11.0",
-        "jest": "^26.5.3",
-        "react": "^16.13.1",
-        "rollup": "^2.30.0",
-        "rollup-plugin-typescript2": "^0.27.3",
-        "ts-jest": "^26.4.1",
-        "typescript": "^4.0.3"
+        "@types/jest": "^26.0.15",
+        "@types/node": "^14.14.7",
+        "@types/react": "^16.9.56",
+        "@typescript-eslint/eslint-plugin": "^4.7.0",
+        "@typescript-eslint/parser": "^4.7.0",
+        "eslint": "^7.13.0",
+        "jest": "^26.6.3",
+        "react": "^17.0.1",
+        "rollup": "^2.33.1",
+        "rollup-plugin-typescript2": "^0.29.0",
+        "ts-jest": "^26.4.4",
+        "typescript": "^4.0.5"
     }
 }
