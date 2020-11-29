@@ -4,13 +4,18 @@
 
 <p align="center">
     <a target="_blank" href="https://github.com/plurid/plurid-functions-typescript/blob/master/LICENSE">
-        <img src="https://img.shields.io/badge/license-MIT-blue.svg?colorB=1380C3&style=for-the-badge" alt="License: MIT">
+        <img src="https://img.shields.io/badge/license-DEL-blue.svg?colorB=1380C3&style=for-the-badge" alt="License: DEL">
     </a>
 </p>
 
 
 
 Utility functions to be used in TypesScript projects.
+
+
+
++ [Packages](#packages)
++ [Codeophon](#codeophon)
 
 
 
@@ -32,3 +37,10 @@ Utility functions to be used in TypesScript projects.
 [@plurid/plurid-functions-react][plurid-functions-react] • functions, hooks, and utilities for React
 
 [plurid-functions-react]: https://github.com/plurid/plurid-functions-typescript/tree/master/packages/plurid-functions-react
+
+
+
+## [Codeophon](https://github.com/ly3xqhl8g9/codeophon)
+
++ licensing: [delicense](https://github.com/ly3xqhl8g9/delicense)
++ versioning: [αver](https://github.com/ly3xqhl8g9/alpha-versioning)
