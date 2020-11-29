@@ -16,6 +16,14 @@
 General utility functions to be used in TypesScript projects.
 
 
+
++ [About](#about)
++ [Codeophon](#codeophon)
+
+
+
+## About
+
 Contains functions for:
 
 + arrays
@@ -30,3 +38,10 @@ Contains functions for:
 + runtime
 + storage
 + uuid
+
+
+
+## [Codeophon](https://github.com/ly3xqhl8g9/codeophon)
+
++ licensing: [delicense](https://github.com/ly3xqhl8g9/delicense)
++ versioning: [αver](https://github.com/ly3xqhl8g9/alpha-versioning)

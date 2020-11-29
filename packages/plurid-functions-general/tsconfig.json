@@ -29,7 +29,6 @@
         "outDir": "distribution"
     },
     "exclude": [
-        "binder",
         "node_modules",
         "distribution",
         "test"
