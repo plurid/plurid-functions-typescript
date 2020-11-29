@@ -16,9 +16,24 @@
 General utility functions to be used in React projects.
 
 
+
++ [About](#about)
++ [Codeophon](#codeophon)
+
+
+
+## About
+
 Contains hooks for:
 
 + debounce
 + event
 + portal
 + throttle
+
+
+
+## [Codeophon](https://github.com/ly3xqhl8g9/codeophon)
+
++ licensing: [delicense](https://github.com/ly3xqhl8g9/delicense)
++ versioning: [αver](https://github.com/ly3xqhl8g9/alpha-versioning)
