@@ -1,18 +1,23 @@
-import * as arrays from './arrays';
-import * as clipboard from './clipboard';
-import * as dom from './dom';
-import * as graphql from './graphql';
-import * as image from './image';
-import * as indexing from './indexing';
-import * as storage from './storage';
-import * as mathematics from './mathematics';
-import * as meta from './meta';
-import * as objects from './objects';
-import * as runtime from './runtime';
-import * as uuid from './uuid';
+// #region imports
+    // #region internal
+    import * as arrays from './arrays';
+    import * as clipboard from './clipboard';
+    import * as dom from './dom';
+    import * as graphql from './graphql';
+    import * as image from './image';
+    import * as indexing from './indexing';
+    import * as storage from './storage';
+    import * as mathematics from './mathematics';
+    import * as meta from './meta';
+    import * as objects from './objects';
+    import * as runtime from './runtime';
+    import * as uuid from './uuid';
+    // #endregion internal
+// #endregion imports
 
 
 
+// #region exports
 export {
     arrays,
     clipboard,
@@ -26,4 +31,5 @@ export {
     objects,
     runtime,
     uuid,
-}
+};
+// #endregion exports
