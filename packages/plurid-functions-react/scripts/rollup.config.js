@@ -18,6 +18,9 @@ const globals = {
 
 const build =  {
     input: 'source/index.ts',
+    external: [
+        'react',
+    ],
     output: [
         {
             file: pkg.main,
