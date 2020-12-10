@@ -18,7 +18,7 @@
 
 
 <h3 align="center">
-    General utility functions to be used in TypesScript projects.
+    General Utility Functions for Plurid Applications
 </h3>
 
 

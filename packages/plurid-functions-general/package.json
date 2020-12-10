@@ -1,11 +1,10 @@
 {
     "name": "@plurid/plurid-functions",
     "version": "0.0.0-0",
-    "description": "Plurid Functions",
+    "description": "General Utility Functions for Plurid Applications",
     "keywords": [
         "plurid",
-        "functions",
-        "components"
+        "functions"
     ],
     "author": "ly3xqhl8g9 <ly3xqhl8g9@plurid.com> (https://plurid.com)",
     "license": "SEE LICENSE IN LICENSE",
