@@ -19,6 +19,7 @@
     },
     "homepage": "https://github.com/plurid/plurid-functions-typescript",
     "publishConfig": {
+        "registry": "https://registry.npmjs.org/",
         "access": "public"
     },
     "files": [
@@ -34,8 +35,8 @@
     "scripts": {
         "test": "jest -c ./configurations/jest.config.js ./source",
         "test.suite": "jest -c ./configurations/jest.config.js",
-        "watch": "rollup -c ./scripts/rollup.config.js -w",
         "clean": "rm -rf ./distribution",
+        "watch": "yarn clean && rollup -c ./scripts/rollup.config.js -w",
         "build.clean": "find ./distribution -type d -name '*__tests__' -exec rm -rf {} + && find ./distribution -type f -name '*.DS_Store' -exec rm -rf {} +",
         "build.production": "rollup -c ./scripts/rollup.config.js",
         "build": "yarn clean && yarn build.production && yarn build.clean",
@@ -46,15 +47,15 @@
     },
     "devDependencies": {
         "@types/crypto-js": "^4.0.1",
-        "@types/jest": "^26.0.15",
-        "@types/node": "^14.14.10",
+        "@types/jest": "^26.0.18",
+        "@types/node": "^14.14.12",
         "@types/react": "^17.0.0",
-        "@typescript-eslint/eslint-plugin": "^4.8.2",
-        "@typescript-eslint/parser": "^4.8.2",
-        "eslint": "^7.14.0",
+        "@typescript-eslint/eslint-plugin": "^4.9.1",
+        "@typescript-eslint/parser": "^4.9.1",
+        "eslint": "^7.15.0",
         "jest": "^26.6.3",
         "react": "^17.0.1",
-        "rollup": "^2.34.0",
+        "rollup": "^2.34.2",
         "rollup-plugin-typescript2": "^0.29.0",
         "ts-jest": "^26.4.4",
         "typescript": "^4.1.2"
