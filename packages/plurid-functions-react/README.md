@@ -18,7 +18,7 @@
 
 
 <h3 align="center">
-    General utility functions to be used in React projects.
+    General Utility Functions for Plurid React Applications
 </h3>
 
 

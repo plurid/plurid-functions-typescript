@@ -1,33 +1,50 @@
-import typescript from 'rollup-plugin-typescript2';
+// #region imports
+    // #region libraries
+    import ttypescript from 'ttypescript';
+    import typescript from 'rollup-plugin-typescript2';
+    // #endregion libraries
 
-import pkg from '../package.json';
+
+    // #region external
+    import pkg from '../package.json';
+    // #endregion external
+// #endregion imports
 
 
 
-export default {
+// #region module
+const globals = {
+};
+
+const build =  {
     input: 'source/index.ts',
     output: [
         {
             file: pkg.main,
             format: 'cjs',
             exports: 'named',
-            sourcemap: false,
+            globals,
+            sourcemap: true,
         },
         {
             file: pkg.module,
             format: 'es',
             exports: 'named',
-            sourcemap: false,
+            globals,
+            sourcemap: true,
         },
-    ],
-    external: [
-        'react',
     ],
     plugins: [
         typescript({
-            check: false,
-            rollupCommonJSResolveHack: true,
-            clean: true,
+            typescript: ttypescript,
+            useTsconfigDeclarationDir: true,
         }),
     ],
-}
+};
+// #endregion module
+
+
+
+// #region exports
+export default build;
+// #endregion exports
