@@ -1,8 +1,8 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/plurid/plurid-icons/master/about/identity/plurid-logo.png" height="250px">
+    <img src="https://raw.githubusercontent.com/plurid/plurid-functions-typescript/master/about/identity/plurid-logo.png" height="250px">
     <br />
     <br />
-    <a target="_blank" href="https://github.com/plurid/plurid-icons/blob/master/LICENSE">
+    <a target="_blank" href="https://github.com/plurid/plurid-functions-typescript/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/license-DEL-blue.svg?colorB=1380C3&style=for-the-badge" alt="License: DEL">
     </a>
 </p>
