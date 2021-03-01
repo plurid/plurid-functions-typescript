@@ -11,6 +11,7 @@
     import * as meta from './meta';
     import * as objects from './objects';
     import * as runtime from './runtime';
+    import * as time from './time';
     import * as uuid from './uuid';
     // #endregion internal
 // #endregion imports
@@ -30,6 +31,7 @@ export {
     meta,
     objects,
     runtime,
+    time,
     uuid,
 };
 // #endregion exports
