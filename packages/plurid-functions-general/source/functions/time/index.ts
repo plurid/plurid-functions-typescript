@@ -1,4 +1,11 @@
 // #region module
+const now = () => {
+    return Math.floor(
+        Date.now() / 1000,
+    );
+}
+
+
 const stamp = () => {
     const date = new Date();
 
@@ -10,6 +17,7 @@ const stamp = () => {
 
 // #region exports
 export {
+    now,
     stamp,
 };
 // #endregion exports
