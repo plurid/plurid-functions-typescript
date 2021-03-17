@@ -10,6 +10,10 @@ import useDebouncedCallback from './debounce';
 import useThrottledCallback from './throttle';
 
 import usePortal from './portal';
+
+import {
+    useFalseAfterTimedTrue,
+} from './general';
 // #endregion imports
 
 
@@ -25,5 +29,7 @@ export {
     useThrottledCallback,
 
     usePortal,
+
+    useFalseAfterTimedTrue,
 };
 // #endregion exports
