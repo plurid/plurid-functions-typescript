@@ -1,10 +1,30 @@
 // #region module
-const compute = (
-    data: string,
-    algorithm = 'sha256',
-) => {
-    const crypto = require('crypto');
+const browserDigestMessage = async (
+    message: string,
+    algorithm: string = 'sha256',
+): Promise<string> => {
+    algorithm = algorithm.toUpperCase().replace('SHA', 'SHA-');
 
+    const msgUint8 = new TextEncoder().encode(message);
+    const hashBuffer = await window.crypto.subtle.digest(algorithm, msgUint8);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    return hashHex;
+}
+
+
+const compute = async (
+    data: string,
+    algorithm: string = 'sha256',
+): Promise<string> => {
+    if (typeof window !== 'undefined') {
+        return await browserDigestMessage(
+            data,
+            algorithm,
+        );
+    }
+
+    const crypto = require('crypto');
     return crypto
         .createHash(algorithm)
         .update(data)
