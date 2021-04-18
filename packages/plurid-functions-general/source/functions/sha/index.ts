@@ -1,16 +1,10 @@
-// #region imports
-    // #region libraries
-    import crypto from 'crypto';
-    // #endregion libraries
-// #endregion imports
-
-
-
 // #region module
 const compute = (
     data: string,
     algorithm = 'sha256',
 ) => {
+    const crypto = require('crypto');
+
     return crypto
         .createHash(algorithm)
         .update(data)

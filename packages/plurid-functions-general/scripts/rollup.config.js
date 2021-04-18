@@ -35,7 +35,6 @@ const build =  {
         },
     ],
     external: [
-        'crypto',
     ],
     plugins: [
         typescript({
