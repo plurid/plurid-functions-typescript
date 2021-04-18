@@ -34,6 +34,9 @@ const build =  {
             sourcemap: true,
         },
     ],
+    external: [
+        'crypto',
+    ],
     plugins: [
         typescript({
             typescript: ttypescript,
