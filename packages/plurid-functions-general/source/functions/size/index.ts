@@ -2,7 +2,10 @@
 const humanFormat = (
     size: number,
 ) => {
-    if (size < 1024) return size + ' B';
+    if (size < 1024) {
+        return size + ' B';
+    }
+
     const i = Math.floor(Math.log(size) / Math.log(1024));
     let num: number | string = (size / Math.pow(1024, i));
     const round = Math.round(num);
@@ -13,7 +16,9 @@ const humanFormat = (
             ? num.toFixed(1)
             : round;
 
-    return `${num} ${'KMGTPEZY'[i-1]}B`;
+    const prefix = 'KMGTPEZY'[i - 1];
+
+    return `${num} ${prefix}B`;
 }
 // #endregion module
 
