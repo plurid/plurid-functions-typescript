@@ -12,6 +12,7 @@
     import * as objects from './objects';
     import * as runtime from './runtime';
     import * as sha from './sha';
+    import * as size from './size';
     import * as time from './time';
     import * as uuid from './uuid';
     // #endregion internal
@@ -33,6 +34,7 @@ export {
     objects,
     runtime,
     sha,
+    size,
     time,
     uuid,
 };
