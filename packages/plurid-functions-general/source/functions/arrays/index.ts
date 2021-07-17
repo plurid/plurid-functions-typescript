@@ -82,3 +82,31 @@ export const swap = <T>(
 
     return newItems;
 }
+
+
+/**
+ * Get unique items based on their `identifier`.
+ *
+ * @param array
+ * @param identifier default `'id'`
+ * @returns
+ */
+export const unique = <T = any>(
+    array: T[],
+    identifier = 'id',
+) => {
+    const result = [];
+    const map = new Map();
+
+    for (const item of array.reverse()) {
+        if (!map.has((item as any)[identifier])) {
+            map.set((item as any)[identifier], true);
+
+            result.push({
+                ...item,
+            });
+        }
+    }
+
+    return result.reverse();
+}
