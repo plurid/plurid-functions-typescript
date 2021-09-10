@@ -1,10 +1,15 @@
-import {
-    isBrowser,
-    isNode,
-} from '../runtime';
+// #region imports
+    // #region external
+    import {
+        isBrowser,
+        isNode,
+    } from '../runtime';
+    // #endregion external
+// #endregion imports
 
 
 
+// #region module
 /**
  * Generate a unique identifier with or without `separator`.
  *
@@ -56,3 +61,20 @@ export const generate = (
 
     return '';
 }
+
+
+export const multiple = (
+    count: number = 1,
+    separator?: string,
+) => {
+    let value = '';
+
+    for (let i = 0; i < count; i++) {
+        value += generate(
+            separator,
+        );
+    }
+
+    return value;
+}
+// #endregion module
