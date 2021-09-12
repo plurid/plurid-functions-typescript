@@ -1,3 +1,4 @@
+// #region module
 /**
  * Convert the `angle` from radians to degrees.
  *
@@ -19,3 +20,4 @@ export const toRadians = (
 ) => {
     return angle * (Math.PI / 180);
 }
+// #endregion module

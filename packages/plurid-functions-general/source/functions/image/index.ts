@@ -1,3 +1,4 @@
+// #region module
 /**
  * Load image from URL in browser.
  *
@@ -19,3 +20,4 @@ export const load = (
         },
     );
 };
+// #endregion module

@@ -1,3 +1,4 @@
+// #region module
 /**
  * http://blog.nicohaemhouts.com/2015/08/03/accessing-nested-javascript-objects-with-string-key/
  *
@@ -154,3 +155,4 @@ export const mapToObject = <K, V>(
 
     return obj;
 }
+// #endregion module

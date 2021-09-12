@@ -1,3 +1,4 @@
+// #region module
 export const placeCaretAtEnd = (
     el: any,
 ) => {
@@ -57,3 +58,4 @@ export const verifyPathInputElement = (
 
     return input;
 }
+// #endregion module

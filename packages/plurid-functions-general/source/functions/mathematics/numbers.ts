@@ -1,3 +1,4 @@
+// #region module
 /**
  * Return true if `value` is an integer
  * but not equal to `1`.
@@ -16,3 +17,4 @@ export const checkIntegerNonUnit = (
 
     return false;
 }
+// #endregion module

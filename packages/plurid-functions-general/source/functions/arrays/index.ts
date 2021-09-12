@@ -1,3 +1,4 @@
+// #region module
 /**
  * Returns the range of integers between start (including) and end (excluding).
  *
@@ -110,3 +111,4 @@ export const unique = <T = any>(
 
     return result.reverse();
 }
+// #endregion module

@@ -1,9 +1,9 @@
+// #region module
 export enum OPERATION_TYPES {
     SUM = 'SUM',
     PRODUCT = 'PRODUCT',
     DIFFERENCE = 'DIFFERENCE',
 }
-
 
 /**
  * Operate on the `values` up to the given `index` based the specific `operation`.
@@ -89,3 +89,4 @@ export const product = (
     );
     return value;
 }
+// #endregion module

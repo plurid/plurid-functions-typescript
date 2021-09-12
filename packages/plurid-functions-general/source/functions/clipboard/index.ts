@@ -1,3 +1,4 @@
+// #region module
 export const copy = (
     text: string,
 ) => {
@@ -16,3 +17,4 @@ export const copy = (
         (document as any).getSelection().addRange(selected);
     }
 };
+// #endregion module

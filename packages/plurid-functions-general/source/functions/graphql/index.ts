@@ -1,3 +1,4 @@
+// #region module
 export const deleteTypenames = (
     data: any,
 ) => {
@@ -21,3 +22,4 @@ export const deleteTypenames = (
 
     return dataObject;
 }
+// #endregion module

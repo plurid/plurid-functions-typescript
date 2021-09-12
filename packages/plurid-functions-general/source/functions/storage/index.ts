@@ -1,3 +1,4 @@
+// #region module
 export const loadState = (
     name: string,
 ) => {
@@ -25,3 +26,4 @@ export const saveState = <S>(
         return;
     }
 };
+// #endregion module

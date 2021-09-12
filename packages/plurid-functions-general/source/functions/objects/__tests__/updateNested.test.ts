@@ -1,9 +1,14 @@
-import {
-    updateNested,
-} from '../';
+// #region imports
+    // #region external
+    import {
+        updateNested,
+    } from '../';
+    // #endregion external
+// #endregion imports
 
 
 
+// #region module
 describe('updateNested', () => {
     it('basic update', () => {
         const obj = {
@@ -25,3 +30,4 @@ describe('updateNested', () => {
         expect(newObj?.a.b.c.d).toEqual(1);
     });
 });
+// #endregion module

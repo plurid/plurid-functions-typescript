@@ -1,3 +1,4 @@
+// #region module
 /**
  * Generate a random number between the given `maximum` and `minimum` values.
  *
@@ -26,3 +27,4 @@ export const number = (
     const randomInterval = Math.random();
     return Math.floor(value) + minimum + Math.round(randomInterval);
 };
+// #endregion module

@@ -1,11 +1,16 @@
-import * as uuid from '../uuid';
+// #region imports
+    // #region external
+    import * as uuid from '../uuid';
 
-import {
-    Indexed,
-} from '../../interfaces';
+    import {
+        Indexed,
+    } from '../../interfaces';
+    // #endregion external
+// #endregion imports
 
 
 
+// #region module
 /**
  * Identify `items` by an `idEntity` property.
  *
@@ -83,3 +88,4 @@ export function create<T, C extends CreateType>(items: T[], type?: C, idKey?: st
 
     return;
 }
+// #endregion module

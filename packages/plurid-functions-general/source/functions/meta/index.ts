@@ -1,3 +1,4 @@
+// #region module
 export const debounce = (
     func: any,
     wait: any,
@@ -62,3 +63,4 @@ export function debouncedCallback<A extends any[]>(
         }, wait);
     };
 }
+// #endregion module
