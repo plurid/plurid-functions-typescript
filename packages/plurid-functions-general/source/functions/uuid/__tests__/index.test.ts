@@ -1,9 +1,14 @@
-import {
-    v4Browser,
-} from '../';
+// #region imports
+    // #region external
+    import {
+        v4Browser,
+    } from '../';
+    // #endregion external
+// #endregion imports
 
 
 
+// #region module
 describe('uuid v4Browser', () => {
     // handle crypto for jest - https://stackoverflow.com/a/52612372
     const crypto = require('crypto');
@@ -23,3 +28,4 @@ describe('uuid v4Browser', () => {
         expect(uuid.length).toBe(36);
     });
 });
+// #endregion module

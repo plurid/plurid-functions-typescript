@@ -63,8 +63,15 @@ export const generate = (
 }
 
 
+/**
+ * Generate multiple, concatenated uuids.
+ *
+ * @param count default `2`
+ * @param separator
+ * @returns
+ */
 export const multiple = (
-    count: number = 1,
+    count: number = 2,
     separator?: string,
 ) => {
     let value = '';
