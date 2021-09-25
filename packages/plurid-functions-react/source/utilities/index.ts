@@ -1,4 +1,5 @@
 // #region imports
+import createMarkup from './createMarkup';
 import mergeReferences from './mergeReferences';
 // #endregion imports
 
@@ -6,6 +7,7 @@ import mergeReferences from './mergeReferences';
 
 // #region exports
 export {
+    createMarkup,
     mergeReferences,
 };
 // #endregion exports
