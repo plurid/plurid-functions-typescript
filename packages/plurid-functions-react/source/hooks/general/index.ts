@@ -1,6 +1,7 @@
 // #region imports
     // #region libraries
     import React, {
+        useRef,
         useState,
         useEffect,
     } from 'react';
@@ -10,6 +11,12 @@
 
 
 // #region module
+/**
+ * After a `true` dispatch, it will wait the `intervalTime` and autoset to `false`.
+ *
+ * @param intervalTime
+ * @returns
+ */
 const useFalseAfterTimedTrue = (
     intervalTime = 2_000, // ms
 ): [boolean, React.Dispatch<React.SetStateAction<boolean>>] => {
@@ -48,6 +55,32 @@ const useFalseAfterTimedTrue = (
     ];
     // #endregion return
 }
+
+
+/**
+ * Keeps reference of the current mounted component.
+ *
+ * @returns
+ */
+const useMounted = () => {
+    // #region references
+    const isMounted = useRef(false);
+    // #endregion references
+
+    // #region effects
+    useEffect(() => {
+        isMounted.current = true;
+
+        return () => {
+            isMounted.current = false;
+        }
+    }, []);
+    // #endregion effects
+
+    // #region return
+    return isMounted.current;
+    // #endregion return
+}
 // #endregion module
 
 
@@ -55,5 +88,6 @@ const useFalseAfterTimedTrue = (
 // #region exports
 export {
     useFalseAfterTimedTrue,
+    useMounted,
 };
 // #endregion exports
