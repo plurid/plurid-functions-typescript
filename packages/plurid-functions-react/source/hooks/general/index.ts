@@ -20,6 +20,10 @@
 const useFalseAfterTimedTrue = (
     intervalTime = 2_000, // ms
 ): [boolean, React.Dispatch<React.SetStateAction<boolean>>] => {
+    // #region references
+    const mounted = useMounted();
+    // #endregion references
+
     // #region state
     const [
         disabledAfterActivation,
@@ -33,6 +37,10 @@ const useFalseAfterTimedTrue = (
 
         if (disabledAfterActivation) {
             timeout = setTimeout(() => {
+                if (!mounted) {
+                    return;
+                }
+
                 setDisabledAfterActivation(false);
             }, intervalTime);
         }
