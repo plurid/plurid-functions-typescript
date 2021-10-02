@@ -1,4 +1,16 @@
 // #region module
+export const parse = <T = any>(
+    value: string,
+) => {
+    try {
+        const data = JSON.parse(value);
+        return data as T;
+    } catch (error) {
+        return;
+    }
+}
+
+
 export const parseFromString = <T = any>(
     value: string,
 ) => {
