@@ -6,6 +6,8 @@ export const removeWhitespace = (
         return '';
     }
 
-    return value.replace(/\s+/g, ' ');
+    return value
+        .replace(/\s+/g, ' ')
+        .trim();
 }
 // #endregion module
