@@ -1,10 +1,10 @@
 // #region imports
     // #region external
-    import * as uuid from '../uuid';
-
     import {
         Indexed,
-    } from '../../interfaces';
+    } from '~data/interfaces';
+
+    import * as uuid from '~functions/uuid';
     // #endregion external
 // #endregion imports
 
