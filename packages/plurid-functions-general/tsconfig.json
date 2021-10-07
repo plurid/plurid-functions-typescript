@@ -8,11 +8,11 @@
 
         "baseUrl": ".",
         "paths": {
-            "#functions/*": [
-                "./source/functions/*"
+            "~data/*": [
+                "source/data/*"
             ],
-            "#interfaces/*": [
-                "./source/interfaces/*"
+            "~functions/*": [
+                "./source/functions/*"
             ]
         },
 
