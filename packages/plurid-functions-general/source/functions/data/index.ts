@@ -1,7 +1,21 @@
+// #region imports
+    // #region external
+    import {
+        PossibleDataString,
+    } from '../../interfaces';
+    // #endregion external
+// #endregion imports
+
+
+
 // #region module
 export const parse = <T = any>(
-    value: string,
+    value: PossibleDataString,
 ) => {
+    if (!value) {
+        return;
+    }
+
     try {
         const data = JSON.parse(value);
         return data as T;
