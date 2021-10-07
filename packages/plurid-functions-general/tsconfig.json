@@ -45,6 +45,10 @@
 
         "plugins": [
             {
+                "transform": "typescript-transform-paths",
+                "afterDeclarations": true,
+            },
+            {
                 "transform": "@zerollup/ts-transform-paths",
                 "exclude": ["*"]
             }
