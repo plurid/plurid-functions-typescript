@@ -9,6 +9,7 @@
     import * as indexing from './indexing';
     import * as mathematics from './mathematics';
     import * as meta from './meta';
+    import * as network from './network';
     import * as objects from './objects';
     import * as runtime from './runtime';
     import * as sha from './sha';
@@ -34,6 +35,7 @@ export {
     indexing,
     mathematics,
     meta,
+    network,
     objects,
     runtime,
     sha,
