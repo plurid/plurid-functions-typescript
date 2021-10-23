@@ -6,6 +6,7 @@ const ipv4Regex = /^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)(\.(?!$)|$)){4}$/;
 // https://stackoverflow.com/a/50385461/6639124
 const ipv6Regex = /(([0-9a-fA-F]{0,4}:){1,7}[0-9a-fA-F]{0,4})/;
 
+// https://stackoverflow.com/a/60831867/6639124
 const hostRegex = /https?:\/\/(?:w{1,3}\.)?[^\s.]+(?:\.[a-z]+)*(?::\d+)?((?:\/\w+)|(?:-\w+))*\/?(?![^<]*(?:<\/\w+>|\/?>))/;
 
 
