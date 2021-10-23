@@ -6,6 +6,9 @@ const ipv4Regex = /^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)(\.(?!$)|$)){4}$/;
 // https://stackoverflow.com/a/50385461/6639124
 const ipv6Regex = /(([0-9a-fA-F]{0,4}:){1,7}[0-9a-fA-F]{0,4})/;
 
+const hostRegex = /https?:\/\/(?:w{1,3}\.)?[^\s.]+(?:\.[a-z]+)*(?::\d+)?((?:\/\w+)|(?:-\w+))*\/?(?![^<]*(?:<\/\w+>|\/?>))/;
+
+
 
 export const isIPv4 = (
     value: string | undefined,
@@ -43,5 +46,22 @@ export const isIP = (
     }
 
     return;
+}
+
+
+/**
+ * Checks the value respects `<scheme> "://" <hostname> [ ":" <port> ]`.
+ *
+ * @param value
+ * @returns
+ */
+export const isHost = (
+    value: string | undefined,
+) => {
+    if (typeof value !== 'string') {
+        return false;
+    }
+
+    return hostRegex.test(value);
 }
 // #endregion module
