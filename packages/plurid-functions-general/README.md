@@ -40,15 +40,22 @@ Contains functions for:
 
 + arrays
 + clipboard
++ data
 + dom
 + graphql
 + image
 + indexing
 + mathematics
 + meta(functions)
++ network
 + objects
 + runtime
++ sha
++ size
 + storage
++ strings
++ time
++ url
 + uuid
 
 
