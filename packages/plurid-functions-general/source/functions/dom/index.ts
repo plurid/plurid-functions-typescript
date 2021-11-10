@@ -58,4 +58,32 @@ export const verifyPathInputElement = (
 
     return input;
 }
+
+
+/**
+ * Downloads `content` as file with `filename`.
+ *
+ * @param filename
+ * @param content
+ * @param dataString default `'data:text/plain;charset=utf-8,'`
+ */
+export const downloadContent = (
+    filename: string,
+    content: string,
+    dataString = 'data:text/plain;charset=utf-8,',
+) => {
+    const element = document.createElement('a');
+    element.setAttribute(
+        'href',
+        dataString + encodeURIComponent(content),
+    );
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
 // #endregion module
