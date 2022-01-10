@@ -140,4 +140,21 @@ export const pascalCaseToDotNotation = (
 
     return newValue;
 }
+
+
+/**
+ * Converts `Camel Case Value` to `camelCaseValue`.
+ *
+ * @param text
+ */
+export const toCamelCase = (
+    value: string
+) => {
+    return value
+        .toLowerCase()
+        .replace(
+            /[^a-zA-Z0-9]+(.)/g,
+            (_, character) => character.toUpperCase(),
+        );
+}
 // #endregion module
