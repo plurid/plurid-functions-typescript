@@ -81,4 +81,63 @@ export const truncate = (
 
     return value.slice(0, length) + ending;
 }
+
+
+
+/**
+ * Given a text string, e.g. 'one two three',
+ * it removes the last word, 'three', returning 'one two'.
+ *
+ * If the text string is one word, 'one', it returns ''.
+ *
+ * @param text Text string.
+ */
+export const removeLastWord = (
+    text: string,
+): string => {
+    const wordsArray = text.split(' ');
+    if (wordsArray.length === 1) {
+        return '';
+    }
+
+    const removedLastWordArray = wordsArray.slice(0, wordsArray.length - 1);
+    const words = removedLastWordArray.join(' ');
+
+    return words;
+}
+
+
+/**
+ * Given `PascalCaseValue` it returns `pascal.case.value`.
+ *
+ * @param value
+ * @param lowercase default `true`
+ * @returns
+ */
+export const pascalCaseToDotNotation = (
+    value: string,
+    lowercase = true,
+) => {
+    let newValue = '';
+
+    for (let i = 0; i < value.length; i++) {
+        const letter = value[i];
+
+        if (letter === letter.toUpperCase()) {
+            if (i !== 0) {
+                newValue += '.';
+            }
+
+            if (lowercase) {
+                newValue += letter.toLowerCase();
+            } else {
+                newValue += letter;
+            }
+        } else {
+            newValue += letter;
+        }
+    }
+
+    return newValue;
+}
 // #endregion module
