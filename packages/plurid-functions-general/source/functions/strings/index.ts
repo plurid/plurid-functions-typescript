@@ -1,3 +1,13 @@
+// #region imports
+    // #region external
+    import {
+        shuffle as arraysShuffle,
+    } from '../arrays';
+    // #endregion external
+// #endregion imports
+
+
+
 // #region module
 export const removeWhitespace = (
     value: string | undefined,
@@ -156,5 +166,20 @@ export const toCamelCase = (
             /[^a-zA-Z0-9]+(.)/g,
             (_, character) => character.toUpperCase(),
         );
+}
+
+
+/**
+ * Shuffles the characters of the `text`.
+ *
+ * @param text
+ * @returns
+ */
+export const shuffle = (
+    text: string,
+): string => {
+    const shuffled = arraysShuffle(text.split(''));
+
+    return shuffled.join('');
 }
 // #endregion module

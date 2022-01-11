@@ -111,4 +111,40 @@ export const unique = <T = any>(
 
     return result.reverse();
 }
+
+
+
+/**
+ * Shuffles the `values` of an array.
+ *
+ * @param array
+ * @returns
+ */
+export const shuffle = <T = any>(
+    values: T[],
+): T[] => {
+    const array = [
+        ...values,
+    ];
+
+    let m = array.length;
+    let i: number | undefined;
+    let temporary: T | undefined;
+
+    // From `https://bost.ocks.org/mike/shuffle`.
+    // While there are elements to shuffle…
+    while (m) {
+        // Pick a remaining element…
+        i = Math.floor(Math.random() * m--);
+
+        // And swap it with the current element.
+        temporary = array[m];
+        array[m] = array[i];
+        array[i] = temporary;
+
+        temporary = undefined;
+    }
+
+    return array;
+}
 // #endregion module
