@@ -1,4 +1,20 @@
 // #region module
+export const isObject = (
+    entity: any,
+) => {
+    if (
+        typeof entity === 'object'
+        && !Array.isArray(entity)
+        && entity !== null
+    ) {
+        return true;
+    }
+
+    return false;
+}
+
+
+
 /**
  * http://blog.nicohaemhouts.com/2015/08/03/accessing-nested-javascript-objects-with-string-key/
  *
@@ -154,5 +170,37 @@ export const mapToObject = <K, V>(
     }
 
     return obj;
+}
+
+
+/**
+ * Removes `undefined` or `null` values from key-value object.
+ *
+ * @param object
+ * @returns
+ */
+export const clean = (
+    object: Record<string, any | undefined | null>,
+    onlyUndefined = false,
+) => {
+    const clonedObject = clone(object, 'any');
+
+    for (const [key, value] of Object.entries(clonedObject)) {
+        if (typeof value === 'undefined') {
+            delete clonedObject[key];
+        }
+
+        if (!onlyUndefined) {
+            if (value === null) {
+                delete clonedObject[key];
+            }
+        }
+
+        if (isObject(value)) {
+            clonedObject[key] = clean(value, onlyUndefined);
+        }
+    }
+
+    return clonedObject;
 }
 // #endregion module
