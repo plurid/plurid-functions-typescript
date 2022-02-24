@@ -153,6 +153,42 @@ export const pascalCaseToDotNotation = (
 
 
 /**
+ * Given `PascalCaseValue` it returns `Pascal_Case_Value`.
+ *
+ * @param value
+ * @returns
+ */
+export const pascalCaseToSnakeCase = (
+    value: string,
+) => {
+    const snakeCase = value
+        .replace(/([A-Z][a-z])/g,' $1')
+        .trim()
+        .split(' ')
+        .join('_');
+
+    return snakeCase;
+}
+
+
+/**
+ * Given `Pascal_Case_Value` it returns `PascalCaseValue`.
+ *
+ * @param value
+ * @returns
+ */
+export const snakeCaseToPascalCase = (
+    value: string,
+) => {
+    return value.toLowerCase()
+        .split('_')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join('');
+}
+
+
+
+/**
  * Converts `Camel Case Value` to `camelCaseValue`.
  *
  * @param text
