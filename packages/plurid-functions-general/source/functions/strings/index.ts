@@ -180,10 +180,12 @@ export const pascalCaseToSnakeCase = (
 export const snakeCaseToPascalCase = (
     value: string,
 ) => {
-    return value.toLowerCase()
+    const pascalCase = value.toLowerCase()
         .split('_')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join('');
+
+    return pascalCase;
 }
 
 
