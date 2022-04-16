@@ -36,11 +36,11 @@
         "test": "jest -c ./configurations/jest.config.js ./source",
         "test.suite": "jest -c ./configurations/jest.config.js",
         "clean": "rm -rf ./distribution",
-        "watch": "yarn clean && rollup -c ./scripts/rollup.config.js -w",
+        "watch": "pnpm clean && rollup -c ./scripts/rollup.config.js -w",
         "build.clean": "find ./distribution -type d -name '*__tests__' -exec rm -rf {} + && find ./distribution -type f -name '*.DS_Store' -exec rm -rf {} +",
         "build.production": "rollup -c ./scripts/rollup.config.js",
-        "build": "yarn clean && yarn build.production && yarn build.clean",
-        "prepublishOnly": "yarn build"
+        "build": "pnpm clean && pnpm build.production && pnpm build.clean",
+        "prepublishOnly": "pnpm build"
     },
     "peerDependencies": {
         "react": ">=17"
