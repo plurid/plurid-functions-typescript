@@ -14,6 +14,7 @@ specifiers:
   rollup-plugin-typescript2: ^0.31.2
   ts-jest: ^27.1.4
   ts-node: ^10.7.0
+  tslib: ^2.3.1
   ttypescript: ^1.5.13
   typescript: ^4.6.3
   typescript-transform-paths: ^3.3.1
@@ -32,6 +33,7 @@ devDependencies:
   rollup-plugin-typescript2: 0.31.2_d34dafbf6b907e766eb724047deaa090
   ts-jest: 27.1.4_9985e1834e803358b7be1e6ce5ca0eea
   ts-node: 10.7.0_17a82b5ac88a5de7094eac76b4edda13
+  tslib: 2.3.1
   ttypescript: 1.5.13_ts-node@10.7.0+typescript@4.6.3
   typescript: 4.6.3
   typescript-transform-paths: 3.3.1_typescript@4.6.3
