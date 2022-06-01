@@ -31,7 +31,7 @@ export const removeWhitespace = (
  *
  * @param value
  */
- export const capitalize = (
+export const capitalize = (
     value: string,
 ) => {
     return value.charAt(0).toUpperCase() + value.slice(1);
@@ -219,5 +219,63 @@ export const shuffle = (
     const shuffled = arraysShuffle(text.split(''));
 
     return shuffled.join('');
+}
+
+
+/**
+ * Removes the `character` at the start of the `value`.
+ *
+ * @param value
+ * @param character
+ * @param count default `1`
+ * @returns
+ */
+ export const trimStart = (
+    value: string,
+    character: string,
+    count = 1,
+): string => {
+    if (count = 0) {
+        return value;
+    }
+
+    if (value[0] === character) {
+        return trimStart(
+            value.slice(1),
+            character,
+            count - 1,
+        );
+    }
+
+    return value;
+}
+
+
+/**
+ * Removes the `character` at the end of the `value`.
+ *
+ * @param value
+ * @param character
+ * @param count default `1`
+ * @returns
+ */
+export const trimEnd = (
+    value: string,
+    character: string,
+    count = 1,
+): string => {
+    if (count = 0) {
+        return value;
+    }
+
+    if (value[value.length - 1] === character) {
+        return trimEnd(
+            value.slice(0, value.length - 1),
+            character,
+            count - 1,
+        );
+    }
+
+    return value;
 }
 // #endregion module
