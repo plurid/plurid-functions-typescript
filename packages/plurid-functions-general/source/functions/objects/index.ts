@@ -1,3 +1,13 @@
+// #region imports
+    // #region external
+    import {
+        InvertResult,
+    } from '../types';
+    // #endregion external
+// #endregion imports
+
+
+
 // #region module
 export const isObject = (
     entity: any,
@@ -203,4 +213,51 @@ export const clean = (
 
     return clonedObject;
 }
+
+
+/**
+ * Flips the keys and the values of the object.
+ * The values must be `string`s or `number`s.
+ *
+ * ```
+ * const a = {
+ *   b: 'c',
+ *   d: 'e',
+ *   f: 1,
+ *   g: true, // ignored
+ * } as const;
+ *
+ * flip(a) -> {
+ *   c: 'b',
+ *   e: 'd',
+ *   1: 'f',
+ * }
+ * ```
+ *
+ * @param obj
+ * @returns
+ */
+export const flip = <
+    T extends Record<PropertyKey, PropertyKey>,
+>(
+    obj: T,
+): InvertResult<T> => Object.entries(obj).reduce(
+    (flip, entry) => {
+        const [
+            key,
+            value,
+        ] = entry;
+
+        if (
+            typeof value !== 'string'
+            && typeof value !== 'number'
+        ) {
+            return flip;
+        }
+
+        flip[value] = key;
+        return flip;
+    },
+    {} as InvertResult<T>,
+);
 // #endregion module
