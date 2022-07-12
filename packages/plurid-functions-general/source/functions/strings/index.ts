@@ -278,4 +278,69 @@ export const trimEnd = (
 
     return value;
 }
+
+
+/**
+ * Pluralizes a `text` based on a `value`.
+ *
+ * ``` typescript
+ * pluralize(1, 'day'); // '1 day'
+ * pluralize(2, 'day'); // '2 days'
+ *
+ * pluralize(1, 'bus', 'es'); // '1 bus'
+ * pluralize(2, 'bus', 'es'); // '1 buses'
+ *
+ * pluralize(1, 'wolf', { replace: 'wolves' }); // '1 wolf'
+ * pluralize(2, 'wolf', { replace: 'wolves' }); // '2 wolves'
+ * ```
+ *
+ * @param value
+ * @param text
+ * @param overload `string | { replace: string }`
+ * @returns
+ */
+export function pluralize(
+    value: number,
+    text: string,
+    end: string,
+): string;
+export function pluralize(
+    value: number,
+    text: string,
+    options: {
+        replace: string;
+    },
+): string;
+export function pluralize(
+    value: any,
+    text: any,
+    overload: any,
+) {
+    if (
+        typeof value !== 'number'
+        || typeof text !== 'string'
+    ) {
+        return '';
+    }
+
+    let end = 's';
+    let replace;
+    if (typeof overload === 'string') {
+        end = overload;
+    } else {
+        replace = overload.replace;
+    }
+
+    const space = ' ';
+
+    if (value === 1) {
+        return value + space + text;
+    }
+
+    if (replace) {
+        return value + space + replace;
+    }
+
+    return value + space + text + end;
+}
 // #endregion module
