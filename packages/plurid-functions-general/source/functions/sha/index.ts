@@ -24,7 +24,8 @@ const compute = async (
         );
     }
 
-    const crypto = require('crypto');
+    const name = 'crypto';
+    const crypto = require(name);
     return crypto
         .createHash(algorithm)
         .update(data)
