@@ -28,15 +28,19 @@ export const placeCaretAtEnd = (
  * @param event
  */
 export const getEventPath = (
-    event: any,
+    event: Event,
 ) => {
-    return event.path || (event.composedPath && event.composedPath());
+    if (event.composedPath) {
+        return event.composedPath() as HTMLElement[];
+    }
+
+    return (event as any).path as HTMLElement[];
 }
 
 
 
 export const verifyPathInputElement = (
-    path: any[],
+    path?: HTMLElement[],
 ) => {
     if (!path) {
         return false;
@@ -58,6 +62,16 @@ export const verifyPathInputElement = (
 
     return input;
 }
+
+
+export const verifyEventInput = (
+    event: Event,
+) => {
+    const path = getEventPath(event);
+
+    return verifyPathInputElement(path);
+}
+
 
 
 /**
