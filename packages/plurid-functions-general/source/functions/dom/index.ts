@@ -34,7 +34,7 @@ export const getEventPath = (
         return event.composedPath() as HTMLElement[];
     }
 
-    return (event as any).path as HTMLElement[];
+    return (event as any)['path'] as HTMLElement[];
 }
 
 
