@@ -331,11 +331,19 @@ export const merge = <O = any, R = O>(
 }
 
 
-export const equals = (
-    object: any,
-    target: any,
+/**
+ * Check `target` equals `object` based on `object`s keys.
+ *
+ * @param object
+ * @param target
+ * @param trunk
+ * @returns
+ */
+export const equals = <O = any>(
+    object: O,
+    target: O,
     trunk?: string,
-) => {
+): boolean => {
     const keysObject = trunk
         ? getNested(object, trunk)
         : object;
