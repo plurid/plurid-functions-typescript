@@ -2,6 +2,7 @@
     // #region external
     import {
         InvertResult,
+        RecursivePartial,
     } from '../types';
     // #endregion external
 // #endregion imports
@@ -260,4 +261,67 @@ export const flip = <
     },
     {} as InvertResult<T>,
 );
+
+
+/**
+ * Merges `target` into `object`.
+ *
+ * The `resolvers` can be used to resolve any field within the `object`
+ * using dot-access syntax, e.g. `{ 'key1.key1.key3': () => value }`.
+ *
+ * @param object
+ * @param target
+ * @param resolvers
+ * @param trunk
+ * @returns
+ */
+export const merge = <O = any, R = O>(
+    object: O,
+    target: RecursivePartial<O>,
+    resolvers: Record<string, () => any> = {},
+    trunk?: string,
+): R => {
+    const result: any = {};
+
+    const keysObject = trunk
+        ? getNested(object, trunk)
+        : object;
+
+    for (const key in keysObject) {
+        const path = trunk
+            ? trunk + '.' + key
+            : key;
+
+        const resolver = resolvers[path];
+        if (resolver) {
+            const value = resolver();
+            result[key] = value;
+            continue;
+        }
+
+        const field = getNested(object, path);
+
+        if (isObject(field)) {
+            const value = merge(
+                object,
+                target,
+                resolvers,
+                path,
+            );
+
+            result[key] = value;
+            continue;
+        }
+
+        const targetField = getNested(target, path);
+        if (typeof targetField !== 'undefined') {
+            result[key] = targetField;
+            continue;
+        }
+
+        result[key] = field;
+    }
+
+    return result;
+}
 // #endregion module

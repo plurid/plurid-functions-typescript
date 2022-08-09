@@ -10,4 +10,9 @@ export type AllValues<T extends Record<PropertyKey, PropertyKey>> = {
 export type InvertResult<T extends Record<PropertyKey, PropertyKey>> = {
     [P in AllValues<T>['value']]: Extract<AllValues<T>, { value: P }>['key']
 }
+
+
+export type RecursivePartial<T> = {
+    [P in keyof T]?: RecursivePartial<T[P]>;
+};
 // #endregion module
