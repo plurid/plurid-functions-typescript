@@ -278,7 +278,7 @@ export const flip = <
 export const merge = <O = any, R = O>(
     object: O,
     target: RecursivePartial<O>,
-    resolvers: Record<string, () => any> = {},
+    resolvers: Record<string, any | (() => any)> = {},
     trunk?: string,
 ): R => {
     const result: any = {};
@@ -294,8 +294,13 @@ export const merge = <O = any, R = O>(
 
         const resolver = resolvers[path];
         if (resolver) {
-            const value = resolver();
-            result[key] = value;
+            if (typeof resolver === 'function') {
+                const value = resolver();
+                result[key] = value;
+                continue;
+            }
+
+            result[key] = resolver;
             continue;
         }
 
@@ -323,5 +328,45 @@ export const merge = <O = any, R = O>(
     }
 
     return result;
+}
+
+
+export const equals = (
+    object: any,
+    target: any,
+    trunk?: string,
+) => {
+    const keysObject = trunk
+        ? getNested(object, trunk)
+        : object;
+
+    for (const key in keysObject) {
+        const path = trunk
+            ? trunk + '.' + key
+            : key;
+
+        const valueObject = getNested(object, path);
+        const valueTarget = getNested(target, path);
+
+        if (isObject(valueObject)) {
+            const equal = equals(
+                object,
+                target,
+                path,
+            );
+
+            if (!equal) {
+                return false;
+            }
+
+            continue;
+        }
+
+        if (valueObject !== valueTarget) {
+            return false;
+        }
+    }
+
+    return true;
 }
 // #endregion module
