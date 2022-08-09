@@ -3,6 +3,7 @@
     import {
         InvertResult,
         RecursivePartial,
+        NestedKeyOf,
     } from '../types';
     // #endregion external
 // #endregion imports
@@ -275,10 +276,14 @@ export const flip = <
  * @param trunk
  * @returns
  */
-export const merge = <O = any, R = O>(
+export const merge = <O extends object = any, R = O>(
     object: O,
     target: RecursivePartial<O>,
-    resolvers: Record<string, any | (() => any)> = {},
+    resolvers: Partial<
+        Record<
+            NestedKeyOf<O>, any | (() => any)
+        >
+    > = {} as any,
     trunk?: string,
 ): R => {
     const result: any = {};
