@@ -46,6 +46,4 @@ export {
     url,
     uuid,
 };
-
-export * from './types';
 // #endregion exports

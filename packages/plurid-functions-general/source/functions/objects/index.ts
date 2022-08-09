@@ -4,7 +4,7 @@
         InvertResult,
         RecursivePartial,
         NestedKeyOf,
-    } from '../types';
+    } from '~data/interfaces';
     // #endregion external
 // #endregion imports
 

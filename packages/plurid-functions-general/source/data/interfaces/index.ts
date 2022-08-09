@@ -1,9 +1,5 @@
-// #region module
-export type PossibleDataString = string | undefined | null;
-// #endregion module
-
-
-
 // #region exports
+export * from './data';
+export * from './general';
 export * from './indexing';
 // #endregion exports
