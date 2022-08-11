@@ -29,5 +29,23 @@ export type NestedKeyOf<ObjectType extends object> =
     }[keyof ObjectType & (string | number)];
 
 
-export type Omitted<O extends object, K extends NestedKeyOf<O> | NestedKeyOf<O>[]> = any;
+export type RecursiveOmit<O = any, P = any> = any;
+
+// export type RecursiveOmit<
+//     ObjectType extends object,
+//     Omits extends NestedKeyOf<ObjectType> | NestedKeyOf<ObjectType>[],
+// > = {
+//     [Key in keyof Omit<
+//         ObjectType,
+//         Omits extends NestedKeyOf<ObjectType>[]
+//             ? Omits[number]
+//             : Omits
+//     >]: ObjectType[Key] extends object
+//         ? RecursiveOmit<
+//             ObjectType[Key],
+//             Omits extends NestedKeyOf<ObjectType>[]
+//                 ? any
+//                 : Omits
+//         > : ObjectType[Key];
+// }
 // #endregion module

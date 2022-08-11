@@ -4,7 +4,7 @@
         InvertResult,
         RecursivePartial,
         NestedKeyOf,
-        Omitted,
+        RecursiveOmit,
     } from '~data/interfaces';
     // #endregion external
 // #endregion imports
@@ -389,7 +389,7 @@ export const omit = <O extends Record<string, any>, K extends NestedKeyOf<O> | N
     object: O,
     keys: K,
     trunk?: string,
-): Omitted<O, K> => {
+): RecursiveOmit<O, K> => {
     const result: any = {};
 
     const keysObject = trunk
