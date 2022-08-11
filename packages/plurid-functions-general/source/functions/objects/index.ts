@@ -385,11 +385,11 @@ export const equals = <O = any>(
 }
 
 
-export const omit = <O extends Record<string, any>>(
+export const omit = <O extends Record<string, any>, K extends NestedKeyOf<O> | NestedKeyOf<O>[]>(
     object: O,
-    keys: NestedKeyOf<O> | NestedKeyOf<O>[],
+    keys: K,
     trunk?: string,
-): Omitted<O, typeof keys> => {
+): Omitted<O, K> => {
     const result: any = {};
 
     const keysObject = trunk
