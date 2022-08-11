@@ -382,4 +382,45 @@ export const equals = <O = any>(
 
     return true;
 }
+
+
+
+export const omit = <O extends Record<string, any>>(
+    object: O,
+    keys: NestedKeyOf<O>[] = [],
+    trunk?: string,
+): any => {
+    const result: any = {};
+
+    const keysObject = trunk
+        ? getNested(object, trunk)
+        : object;
+
+    for (const key in keysObject) {
+        const path = trunk
+            ? trunk + '.' + key as NestedKeyOf<O>
+            : key as NestedKeyOf<O>;
+
+        if (keys.includes(path)) {
+            continue;
+        }
+
+        const field = getNested(object, path);
+
+        if (isObject(field)) {
+            const value = omit(
+                object,
+                keys,
+                path as any,
+            );
+
+            result[key] = value;
+            continue;
+        }
+
+        result[key] = field;
+    }
+
+    return result;
+}
 // #endregion module
