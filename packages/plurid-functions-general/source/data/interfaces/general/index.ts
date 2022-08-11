@@ -27,4 +27,7 @@ export type NestedKeyOf<ObjectType extends object> =
             ? `${Key}` | `${Key}.${NestedKeyOf<ObjectType[Key]>}`
             : `${Key}`
     }[keyof ObjectType & (string | number)];
+
+
+export type Omitted<O extends object, K extends NestedKeyOf<O> | NestedKeyOf<O>[]> = any;
 // #endregion module

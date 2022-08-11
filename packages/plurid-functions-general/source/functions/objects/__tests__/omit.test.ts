@@ -56,6 +56,11 @@ describe('omit', () => {
             ],
         );
 
+        // const newObj2 = omit(
+        //     obj,
+        //     'one',
+        // );
+
         expect((newObj as any).one).toBe(undefined);
         expect((newObj as any).three.four).toBe(undefined);
     });
