@@ -5,7 +5,6 @@
         RecursivePartial,
         NestedKeyOf,
         RecursiveOmit,
-        OmitKeyOrKeyList,
     } from '~data/interfaces';
     // #endregion external
 // #endregion imports
@@ -393,8 +392,7 @@ export const omit = <
     object: O,
     keys: K,
     trunk?: string,
-): OmitKeyOrKeyList<O, K> => {
-// ): RecursiveOmit<O, K> => {
+): RecursiveOmit<O, K> => {
     const result: any = {};
 
     const keysObject = trunk

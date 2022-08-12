@@ -45,6 +45,7 @@ describe('omit', () => {
             two: true,
             three: {
                 four: 5,
+                six: 'seven',
             },
         };
 
@@ -55,11 +56,13 @@ describe('omit', () => {
                 'three.four',
             ],
         );
+        // newObj
 
-        // const newObj2 = omit(
-        //     obj,
-        //     'one',
-        // );
+        const newObj2 = omit(
+            obj,
+            'three.six',
+        );
+        // newObj2
 
         expect((newObj as any).one).toBe(undefined);
         expect((newObj as any).three.four).toBe(undefined);

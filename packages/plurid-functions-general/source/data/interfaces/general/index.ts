@@ -29,34 +29,36 @@ export type NestedKeyOf<ObjectType extends object> =
     }[keyof ObjectType & (string | number)];
 
 
+/**
+ * https://github.com/ghoullier/awesome-template-literal-types#dot-notation-string-type-safe
+ */
+export type ExtractPathsLogic<T, Key extends keyof T> = Key extends string
+    ? T[Key] extends Record<string, any>
+      ? | `${Key}.${ExtractPathsLogic<T[Key], Exclude<keyof T[Key], keyof any[]>> & string}`
+        | `${Key}.${Exclude<keyof T[Key], keyof any[]> & string}`
+      : never
+    : never;
 
-export type OmitKeyOrKeyList<
-    O extends object,
-    K extends NestedKeyOf<O> | NestedKeyOf<O>[]
-> = K extends `${infer U}` ? {
-    [K in keyof Omit<O, U>]: O[K];
-} : K[number] extends `${infer U}` ? {
-    [K in keyof Omit<O, U>]: O[K];
-} : never;
+export type ExtractPathsRecursion<T> = ExtractPathsLogic<T, keyof T> | keyof T;
+
+export type ExtractPaths<T> = ExtractPathsRecursion<T> extends string | keyof T
+    ? ExtractPathsRecursion<T>
+    : keyof T;
 
 
-export type RecursiveOmit<O = any, P = any> = any;
+export type Split<
+    S extends string,
+    D extends string,
+> = S extends `${infer T}${D}${infer U}`
+    ? [T, ...Split<U, D>]
+    : [S];
 
-// export type RecursiveOmit<
-//     ObjectType extends object,
-//     Omits extends NestedKeyOf<ObjectType> | NestedKeyOf<ObjectType>[],
-// > = {
-//     [Key in keyof Omit<
-//         ObjectType,
-//         Omits extends NestedKeyOf<ObjectType>[]
-//             ? Omits[number]
-//             : Omits
-//     >]: ObjectType[Key] extends object
-//         ? RecursiveOmit<
-//             ObjectType[Key],
-//             Omits extends NestedKeyOf<ObjectType>[]
-//                 ? any
-//                 : Omits
-//         > : ObjectType[Key];
-// }
+
+export type RootKey<S extends string> = Split<S, '.'>['length'] extends 1 ? true : false;
+
+
+export type RecursiveOmit<
+    ObjectType extends object,
+    Omits extends NestedKeyOf<ObjectType> | NestedKeyOf<ObjectType>[],
+> = any;
 // #endregion module
