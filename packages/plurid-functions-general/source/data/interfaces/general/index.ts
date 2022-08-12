@@ -29,6 +29,17 @@ export type NestedKeyOf<ObjectType extends object> =
     }[keyof ObjectType & (string | number)];
 
 
+
+export type OmitKeyOrKeyList<
+    O extends object,
+    K extends NestedKeyOf<O> | NestedKeyOf<O>[]
+> = K extends `${infer U}` ? {
+    [K in keyof Omit<O, U>]: O[K];
+} : K[number] extends `${infer U}` ? {
+    [K in keyof Omit<O, U>]: O[K];
+} : never;
+
+
 export type RecursiveOmit<O = any, P = any> = any;
 
 // export type RecursiveOmit<
