@@ -24,12 +24,11 @@ const compute = async (
         );
     }
 
-    // HACK prevent browser usage
+    // FORCE prevent webpack bundling
     const force = {
-        require,
+        eval,
     };
-    const name = 'crypto';
-    const crypto = force.require(name);
+    const crypto = force.eval('require')('crypto'); // eslint-disable-line no-eval
     return crypto
         .createHash(algorithm)
         .update(data)
