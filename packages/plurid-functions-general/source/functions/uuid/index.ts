@@ -31,10 +31,7 @@ export const v4Node = (
     separator: string = '',
 ) => {
     // FORCE prevent webpack bundling
-    const force = {
-        eval,
-    };
-    const crypto = force.eval('require')('crypto'); // eslint-disable-line no-eval
+    const crypto = eval('require')('crypto'); // eslint-disable-line no-eval
     const id: string = crypto.randomBytes(16).toString('hex');
     if (!separator) {
         return id;
