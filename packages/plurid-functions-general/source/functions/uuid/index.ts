@@ -30,8 +30,12 @@ export const v4Browser = (
 export const v4Node = (
     separator: string = '',
 ) => {
+    // HACK prevent browser usage
+    const force = {
+        require,
+    };
     const name = 'crypto';
-    const crypto = require(name);
+    const crypto = force.require(name);
     const id: string = crypto.randomBytes(16).toString('hex');
     if (!separator) {
         return id;

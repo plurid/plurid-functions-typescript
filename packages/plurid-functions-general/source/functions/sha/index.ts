@@ -24,8 +24,12 @@ const compute = async (
         );
     }
 
+    // HACK prevent browser usage
+    const force = {
+        require,
+    };
     const name = 'crypto';
-    const crypto = require(name);
+    const crypto = force.require(name);
     return crypto
         .createHash(algorithm)
         .update(data)
