@@ -23,7 +23,6 @@ export type RecursivePartial<T> = {
 export type NestedKeyOf<ObjectType extends object> =
     {
         [Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object
-            // @ts-expect-error :: Type instantiation is excessively deep and possibly infinite.
             ? `${Key}` | `${Key}.${NestedKeyOf<ObjectType[Key]>}`
             : `${Key}`
     }[keyof ObjectType & (string | number)];
