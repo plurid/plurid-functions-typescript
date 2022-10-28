@@ -94,7 +94,7 @@ export const truncate = (
 
 
 /**
- * Trims the middle of the `value`` keeping the lateral `length`
+ * Trims the middle of the `value` keeping the lateral `length`
  * and replacing with the `middle`.
  *
  * ``` text
