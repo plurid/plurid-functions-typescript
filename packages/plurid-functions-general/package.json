@@ -28,8 +28,8 @@
     "module": "distribution/index.es.js",
     "jsnext:main": "distribution/index.es.js",
     "engines": {
-        "node": ">=12",
-        "npm": ">=6"
+        "node": ">=18",
+        "npm": ">=8"
     },
     "scripts": {
         "test": "jest -c ./configurations/jest.config.js ./source",
