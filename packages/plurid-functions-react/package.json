@@ -29,34 +29,34 @@
     "module": "distribution/index.es.js",
     "types": "distribution/index.d.js",
     "engines": {
-        "node": ">=12",
-        "npm": ">=6"
+        "node": ">=18",
+        "npm": ">=8"
     },
     "scripts": {
         "test": "jest -c ./configurations/jest.config.js ./source",
         "test.suite": "jest -c ./configurations/jest.config.js",
         "clean": "rm -rf ./distribution",
-        "watch": "pnpm clean && rollup -c ./scripts/rollup.config.js -w",
+        "watch": "pnpm clean && rollup -c ./scripts/rollup.config.js -w --bundleConfigAsCjs",
         "build.clean": "find ./distribution -type d -name '*__tests__' -exec rm -rf {} + && find ./distribution -type f -name '*.DS_Store' -exec rm -rf {} +",
-        "build.production": "rollup -c ./scripts/rollup.config.js",
+        "build.production": "rollup -c ./scripts/rollup.config.js --bundleConfigAsCjs",
         "build": "pnpm clean && pnpm build.production && pnpm build.clean",
         "prepublishOnly": "pnpm build"
     },
     "peerDependencies": {
-        "react": ">=17"
+        "react": ">=18"
     },
     "devDependencies": {
         "@types/crypto-js": "^4.1.1",
-        "@types/jest": "^29.1.1",
-        "@types/node": "^18.8.2",
-        "@types/react": "^18.0.21",
-        "@typescript-eslint/eslint-plugin": "^5.39.0",
-        "@typescript-eslint/parser": "^5.39.0",
+        "@types/jest": "^29.2.0",
+        "@types/node": "^18.11.7",
+        "@types/react": "^18.0.24",
+        "@typescript-eslint/eslint-plugin": "^5.41.0",
+        "@typescript-eslint/parser": "^5.41.0",
         "@zerollup/ts-transform-paths": "^1.7.18",
-        "eslint": "^8.24.0",
-        "jest": "^29.1.2",
+        "eslint": "^8.26.0",
+        "jest": "^29.2.2",
         "react": "^18.2.0",
-        "rollup": "^2.79.1",
+        "rollup": "^3.2.3",
         "rollup-plugin-typescript2": "^0.34.1",
         "ts-jest": "^29.0.3",
         "ts-node": "^10.9.1",
