@@ -64,7 +64,7 @@ export const capitalizeAll = (
  * Truncates the `value` to a given `length` adding the `ending`.
  *
  * ``` text
- * e.g. 1234567890 -> 1234...
+ * e.g. 1234567890 -> 1234…
  * ```
  *
  * ``` typescript
@@ -73,13 +73,13 @@ export const capitalizeAll = (
  *
  * @param value
  * @param length default `100`
- * @param ending default `'...'`
+ * @param ending default `'…'`
  * @returns
  */
 export const truncate = (
     value: string | undefined,
     length: number = 50,
-    ending: string = '...',
+    ending: string = '…',
 ) => {
     if (!value) {
         return '';
@@ -92,6 +92,39 @@ export const truncate = (
     return value.slice(0, length) + ending;
 }
 
+
+/**
+ * Trims the middle of the `value`` keeping the lateral `length`
+ * and replacing with the `middle`.
+ *
+ * ``` text
+ * e.g. 12345678901234567890 -> 123456…567890
+ * ```
+ *
+ * @param value
+ * @param length default `6`
+ * @param middle default `'…'`
+ * @returns
+ */
+export const trimMiddle = (
+    value: string | undefined,
+    length: number = 6,
+    middle: string = '…',
+) => {
+    if (!value) {
+        return '';
+    }
+
+    if (value.length < (length * 2 + middle.length)) {
+        return value;
+    }
+
+    const start = value.slice(0, length);
+    const end = value.slice(value.length - length);
+    const trim = start + middle + end;
+
+    return trim;
+}
 
 
 /**
