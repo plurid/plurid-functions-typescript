@@ -104,23 +104,29 @@ export const truncate = (
  * @param value
  * @param length default `6`
  * @param middle default `'…'`
+ * @param startLength
+ * @param endLength
  * @returns
  */
 export const trimMiddle = (
     value: string | undefined,
     length: number = 6,
     middle: string = '…',
+    startLength?: number,
+    endLength?: number,
 ) => {
     if (!value) {
         return '';
     }
 
-    if (value.length < (length * 2 + middle.length)) {
+    const lengthSum = (startLength ?? length) + (endLength ?? length);
+
+    if (value.length < (lengthSum + middle.length)) {
         return value;
     }
 
-    const start = value.slice(0, length);
-    const end = value.slice(value.length - length);
+    const start = value.slice(0, startLength ?? length);
+    const end = value.slice(value.length - (endLength ?? length));
     const trim = start + middle + end;
 
     return trim;
