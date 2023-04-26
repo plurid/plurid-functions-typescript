@@ -2,7 +2,7 @@
     // #region libraries
     import ttypescript from 'ttypescript';
     import typescript from 'rollup-plugin-typescript2';
-    import { terser } from 'rollup-plugin-terser';
+    import terser from '@rollup/plugin-terser';
     // #endregion libraries
 
 
